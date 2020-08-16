@@ -39,6 +39,37 @@ async def on_message(message):
             classData2 = soup.select('#ctdat')[0]
             Date = classData2.text
 
+            temp = Date.split()
+            for i in temp:
+                i.replace(',', '')
+
+            if temp[1] == "January":
+                temp[1] = "1"
+            elif temp[1] == "February":
+                temp[1] = "2"
+            elif temp[1] == "March":
+                temp[1] = "3"
+            elif temp[1] == "April":
+                temp[1] = "4"
+            elif temp[1] == "May":
+                temp[1] = "5"
+            elif temp[1] == "June":
+                temp[1] = "6"
+            elif temp[1] == "July":
+                temp[1] = "7"
+            elif temp[1] == "August":
+                temp[1] = "8"
+            elif temp[1] == "September":
+                temp[1] = "9"
+            elif temp[1] == "October":
+                temp[1] = "10"
+            elif temp[1] == "November":
+                temp[1] = "11"
+            elif temp[1] == "December":
+                temp[1] = "12"
+
+            Date = temp[3] + "년" + temp[1] + "월" + temp[2] + "일" + temp[0] + "요일"
+
             embed = discord.Embed(
                 title=area + " 시간 정보",
                 description="\u200b",
