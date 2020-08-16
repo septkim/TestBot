@@ -7,7 +7,21 @@ app = discord.Client() #클라이언트 변수
 
 @app.event
 async def on_message(message):
-    # < 봇 호출 >
+    # < 명령어 목록 출력 >
+    if message.content.startswith("!명령어"):
+        embed = discord.Embed(
+                title="명령어 목록",
+                description="\u200b",
+                color=discord.Colour.blue()
+            )
+            embed.add_field(
+                name="시간 출력",
+                value="!시간 지역명 (ex: !시간 시애틀)",
+                inline=True
+            )
+            await message.channel.send(embed=embed)
+            
+    # < 시간 출력 >
     if message.content.startswith("!시간"):
         text = message.content
         flag = False
