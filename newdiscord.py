@@ -13,9 +13,9 @@ async def on_message(message):
         flag = False
 
         # < 지역 검색 >
-        if "한국" in text:
+        if "한국" or "서울" in text:
             Time_url = "https://www.timeanddate.com/worldclock/south-korea/seoul"
-            area = "한국"
+            area = "한국(서울)"
             flag = True
 
         elif "시애틀" in text:
@@ -35,7 +35,6 @@ async def on_message(message):
             classData = soup.select('.h1')[0]
             Time = classData.text
             Time = Time.replace('.', '')
-            #Time = Time(3:4) + "시 " + Time(6:7) + "분 " + Time(9:10) + "초"
 
             embed = discord.Embed(
                 title=area + " 시간 정보",
