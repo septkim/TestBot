@@ -41,7 +41,7 @@ async def on_message(message):
 
             temp = Date.split()
             for i in temp:
-                i.replace(',', '')
+                i = i.replace(',', '')
 
             if temp[1] == "January":
                 temp[1] = "1"
@@ -68,7 +68,7 @@ async def on_message(message):
             elif temp[1] == "December":
                 temp[1] = "12"
 
-            Date = temp[3] + "년" + temp[1] + "월" + temp[2] + "일" + temp[0] + "요일"
+            Date = temp[3] + "년 " + temp[1] + "월 " + temp[2] + "일 " + temp[0] + "요일"
 
             embed = discord.Embed(
                 title=area + " 시간 정보",
