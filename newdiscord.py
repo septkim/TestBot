@@ -16,7 +16,7 @@ async def on_message(message):
             )
             embed.add_field(
                 name="시간 출력",
-                value="!시간 지역명 (ex: !시간 시애틀)",
+                value="시간 ",
                 inline=False
             )
             await message.channel.send(embed=embed)
