@@ -35,6 +35,7 @@ async def on_message(message):
             classData = soup.select('.h1')[0]
             Time = classData.text
             Time = Time.replace('.', '')
+            Time = Time(3:4) + "시 " + Time(6:7) + "분 " + Time(9:10) + "초"
 
             embed = discord.Embed(
                 title=area + " 시간 정보",
