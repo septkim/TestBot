@@ -13,7 +13,7 @@ async def on_message(message):
         flag = False
 
         # < 지역 검색 >
-        if "한국" in text:
+        if "한국" in text or "서울" in text:
             Time_url = "https://www.timeanddate.com/worldclock/south-korea/seoul"
             area = "한국(서울)"
             flag = True
