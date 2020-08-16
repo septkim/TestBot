@@ -68,20 +68,20 @@ async def on_message(message):
             elif temp[1] == "December":
                 temp[1] = "12"
 
-            if temp[1] == "Monday":
-                temp[1] = "월"
-            elif temp[1] == "Tuesday":
-                temp[1] = "화"
-            elif temp[1] == "Wednesday":
-                temp[1] = "수"
-            elif temp[1] == "Thursday":
-                temp[1] = "목"
-            elif temp[1] == "Friday":
-                temp[1] = "금"
-            elif temp[1] == "Saturday":
-                temp[1] = "토"
-            elif temp[1] == "Sunday":
-                temp[1] = "일"
+            if temp[0] == "Monday":
+                temp[0] = "월"
+            elif temp[0] == "Tuesday":
+                temp[0] = "화"
+            elif temp[0] == "Wednesday":
+                temp[0] = "수"
+            elif temp[0] == "Thursday":
+                temp[0] = "목"
+            elif temp[0] == "Friday":
+                temp[0] = "금"
+            elif temp[0] == "Saturday":
+                temp[0] = "토"
+            elif temp[0] == "Sunday":
+                temp[0] = "일"
 
             Date = temp[3] + "년 " + temp[1] + "월 " + temp[2] + "일 " + temp[0] + "요일"
 
@@ -101,7 +101,6 @@ async def on_message(message):
                 inline=False
             )
             await message.channel.send(embed=embed)
-
-            
+     
 access_token = os.environ["BOT_TOKEN"]
 app.run(access_token)
