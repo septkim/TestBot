@@ -12,7 +12,12 @@ async def on_message(message):
     if message.content.startswith("안녕"):
         await message.channel.send("하이")
 
-client.run("NzQ0NDQ4MTgyMjQ2ODM0MjI3.XzjXZQ.PlijkNerOo91mRNjE6xQeMaKM30")
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
+# client.run("NzQ0NDQ4MTgyMjQ2ODM0MjI3.XzjXZQ.PlijkNerOo91mRNjE6xQeMaKM30")
+
+
+
 
 # import discord
 # import os
