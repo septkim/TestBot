@@ -36,6 +36,9 @@ async def on_message(message):
             Time = classData.text
             Time = Time.replace('.', '')
 
+            classData2 = soup.select('#ctdat')[0]
+            Date = classData2.text
+
             embed = discord.Embed(
                 title=area + " 시간 정보",
                 description="\u200b",
@@ -46,8 +49,13 @@ async def on_message(message):
                 value=Time,
                 inline=False
             )
+            embed.add_field(
+                name="날짜",
+                value=Date,
+                inline=False
+            )
             await message.channel.send(embed=embed)
 
-
+            
 access_token = os.environ["BOT_TOKEN"]
 app.run(access_token)
