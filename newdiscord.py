@@ -40,8 +40,8 @@ async def on_message(message):
             Date = classData2.text
 
             temp = Date.split()
-            for i in temp:
-                i = i.replace(',', '')
+            temp[0] = temp[0].replace(',', '')
+            temp[2] = temp[2].replace(',', '')
 
             if temp[1] == "January":
                 temp[1] = "1"
